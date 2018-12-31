@@ -1,0 +1,33 @@
+satellite:
+  register:
+    username: admin # RHN regstration username
+    password: password123 # Do not put this in version control
+
+  install:
+    organization: "Default Organization"
+    location: "Default location"
+    username: admin
+    password: password123 # Do not put this in version control
+    dns-managed: False # defautl value is False
+    dhcp-managed: False # default value is False
+    cert: /path/to/cert/file
+    csr: /path/to/csr/file
+    key: /path/to/key/file
+    ca-cert: /path/to/ca-bundle/file
+
+  organizations:
+    id: # must be a unique ID/Organization
+      name: "Organization" # name of the organization
+      label: "Organization Label" # label of the organization
+      description: "Organization Description" # description of the organization
+      sync_plans:
+        sync_plan_id: # unique Sync Plan name
+          name: "Daily Sync" # name of sync plan
+          interval: daily # hourly, daily, or weekly
+
+  locations:
+    id: # must be a unqiue ID/Location
+      name: "Location" # location
+      organization: "Organization" # Organization to add a location
+
+
